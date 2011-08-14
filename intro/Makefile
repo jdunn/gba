@@ -1,5 +1,5 @@
 # --- Project Settings
-PRODUCT_NAME       = cs1372
+PRODUCT_NAME       = template
 SOURCES            = main.c lib.c
 
 # --- System Settings
