@@ -1,1 +1,6 @@
-No information yet.
+Gameboy Advance Programming in C
+
+For compiling, download devkitARM.
+$ make clean
+$ make all
+
