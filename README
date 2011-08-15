@@ -1,6 +1,10 @@
 Gameboy Advance Programming in C
 
-For compiling, download devkitARM.
-$ make clean
+For compiling, download devkitARM from the devkitPro SourceForge website at
+http://sourceforge.net/projects/devkitpro/files/devkitARM/
+
+Compiling instructions
+- Makefiles will be included with each project/template
+
 $ make all
 
