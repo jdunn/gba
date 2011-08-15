@@ -1,3 +1,9 @@
+/*
+ * Basic template for the Game Boy Advance 
+ * Mode 3 dev
+ * lib.h
+ */
+
 #ifndef __LIB_H__
 #define __LIB_H__
 
@@ -6,6 +12,7 @@
  */
 
 typedef unsigned short u16;
+typedef unsigned int u32;
 
 /* We want to treat the "screen" as an array for shorts.
  * NOTE: Declared as extern since definitions usually do not go in header
@@ -17,8 +24,9 @@ typedef unsigned short u16;
  * // u16 * videoBuffer = (u16 *) 0x6000000;
  */
 
-#define videoBuffer         ((u16 *) 0x6000000)
+#define VIDEOBUFFER         ((u16 *) 0x6000000)
 #define REG_DISPCNT         *(u16 *) 0x4000000
+#define SCANCOUNTER         *(volatile unsigned short *) 0x4000006
 #define MODE_3              3
 #define BG2                 (1 << 10)
 
@@ -26,10 +34,11 @@ typedef unsigned short u16;
 #define COLS                240
 #define COLOR(r, g, b)      (r) | (g) << 5 | (b) << 10
 #define OFFSET(row, col)    (col) + (row) * COLS
-#define PIXEL(r, c, color)  videoBuffer[OFFSET(r,c)] = color
+#define PIXEL(r, c, color)  VIDEOBUFFER[OFFSET(r,c)] = color
 
 /* Function prototypes */
 void gbaInitialize(void);
+void waitForVBlank(void);
 void placePixel(int r, int c, u16 color);
 
 #endif
