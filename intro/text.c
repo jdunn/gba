@@ -9,10 +9,10 @@
 
 void drawChar(int row, int col, char ch, u16 color) {
     int r, c;
-    for(r=0; r<8; r++) {
-	    for(c=0; c<6; c++) {
+    for(r = 0; r < 8; ++r) {
+	    for(c = 0; c < 6; ++c) {
 		    if(fontdata_6x8[r*6 + c + 48*ch]) {
-			    PIXEL(row+r, col+c, color);
+			    PIXEL(row + r, col + c, color);
             }
         }
     }
