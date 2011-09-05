@@ -8,3 +8,6 @@ Compiling instructions
 
 $ make all
 
+intro/ : This is a basic template to get started with programming on the 
+         Gameboy Advance while in bitmap mode 3.
+
